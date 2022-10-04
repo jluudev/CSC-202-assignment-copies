@@ -1,0 +1,44 @@
+{
+  "tests": [
+    {
+      "name": "coverage lab1a",
+      "setup": "sudo -H pip3 install coverage >/dev/null",
+      "run": "python3 -m coverage run lab1a_tests.py >/dev/null ; python3 -m coverage report -m --fail-under=100",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "type check 1a",
+      "setup": "sudo -H python3 -m pip install mypy >/dev/null",
+      "run": "echo \"mypy type check\"; mypy --disallow-untyped-defs lab1a.py lab1a_tests.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "coverage location",
+      "setup": "sudo -H pip3 install coverage >/dev/null",
+      "run": "python3 -m coverage run location_tests.py >/dev/null; python3 -m coverage report -m --fail-under=100",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "type check location",
+      "setup": "sudo -H python3 -m pip install mypy >/dev/null",
+      "run": "echo \"mypy type check\"; mypy --disallow-untyped-defs location.py location_tests.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}
