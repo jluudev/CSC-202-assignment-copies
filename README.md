@@ -1,7 +1,7 @@
 # CSC-202-assignment-copies
 Copy of all of my CSC 202 assignments including labs and projects + scores and what was wrong (if any)
 
-Labs
+Labs (10% of grade)
 -------------------
 Lab 1a - Python Classes and Testing - 10/10 
 
@@ -20,7 +20,7 @@ Lab 6 - Implement a Min Heap - na/10 *not yet uploaded
 Lab 7 - Basic Comparison Sorts (Selection and Insertion) and Quicksort - na/10
 
 
-Projects
+Projects (25% of grade)
 -------------------
 Project 1 - lexicographic permutation, recursive lists, teddy bear picnic - 95/10 - infinite recursion for teddy bear picnic when 60 bears
 
