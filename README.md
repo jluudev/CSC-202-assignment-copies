@@ -7,7 +7,7 @@ Lab 1a - Python Classes and Testing - 10/10
 
 Lab 1b - Binary Search, Iteration and Recursion - 10/10 
 
-Lab 2 - ADT Stack Implementation - 6/10 - wrong return value for peek/pop in NodeList
+Lab 2 - ADT Stack Implementation - 6/10 - returned the wrong value for peek/pop in NodeList (type should be Any)
 
 Lab 3 - Queue Implementation - 8/10 - queue NodeList implementation error in dequeue
 
