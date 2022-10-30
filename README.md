@@ -1,5 +1,5 @@
 # CSC-202-assignment-copies
-Copy of all of my CSC 202 assignments including labs and projects + scores and what was wrong (if any)
+Copy of all of my CSC 202 assignments + scores and what was wrong (if any)
 
 Labs (10% of grade)
 -------------------
