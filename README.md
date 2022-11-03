@@ -26,4 +26,4 @@ Project 1 - lexicographic permutation, recursive lists, teddy bear picnic - 95/1
 
 Project 2 - Evalutating expressions using stacks (postfix, prefix, infix) - 100/100
 
-Project 3a - Huffman encoding - na/100 *not yet uploaded
+Project 3a - Huffman encoding - na/100
