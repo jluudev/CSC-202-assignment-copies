@@ -30,7 +30,7 @@ def combine(a: HuffmanNode, b: HuffmanNode) -> HuffmanNode:
     """Creates a new Huffman node with children a and b, with the "lesser node" on the left
     The new node's frequency value will be the sum of the a and b frequencies
     The new node's char value will be the lower of the a and b char ASCII values"""
-    freq = a.freq + b.freq  #sum of freq of a and b
+    freq = a.freq + b.freq  # sum of freq of a and b
     if comes_before(a, b):
         n = HuffmanNode(min(a.char_ascii, b.char_ascii), freq, a, b)
     else:
@@ -43,7 +43,7 @@ def cnt_freq(filename: str) -> List:
     frequency of occurrences of all the characters within that file
     Returns a Python List with 256 entries - counts are initialized to zero.
     The ASCII value of the characters are used to index into this list for the frequency counts"""
-    freq_list: List = [0] * 256     #empty freq list of 256, 0s
+    freq_list: List = [0] * 256  # empty freq list of 256, 0s
     try:
         with open(filename) as file:
             read = file.read()
@@ -92,7 +92,7 @@ def create_code(node: Optional[HuffmanNode]) -> List:
     """Returns an array (Python list) of Huffman codes. For each character, use the integer ASCII representation
     as the index into the array, with the resulting Huffman code for that character stored at that location.
     Characters that are unused should have an empty string at that location"""
-    char_list: List = [""] * 256        #empty string list of Huffman Codes
+    char_list: List = [""] * 256  # empty string list of Huffman Codes
     if node is None:
         return char_list
     else:
@@ -144,8 +144,51 @@ def huffman_encode(in_file: str, out_file: str) -> None:
             read = i_f.read()
             if huffman_tree is None:
                 i_o.write("")
+            elif huffman_tree.left is None and huffman_tree.right is None:
+                i_o.write(create_header(freqs) + "\n")
             elif huffman_tree.left is not None and huffman_tree.right is not None:
                 i_o.write(create_header(freqs) + "\n")
                 for c in read:
                     new_code = code_str[ord(c)]
                     i_o.write(new_code)
+
+def huffman_decode(encoded_file: str, decode_file: str) -> None:
+    try:
+        with open(encoded_file, 'r', newline='') as read:
+            with open(decode_file, 'w+', newline='') as decode:
+                line_1 = read.readline()
+                if len(line_1) == 0:
+                    decode.write("")
+                else:
+                    lst = line_1.split()
+                    if len(lst) == 2:
+                        decode.write(chr(int(lst[0])) * int(lst[1]))
+                    else:
+                        freq_list = parse_header(line_1)
+                        hufftree = create_huff_tree(freq_list)
+                        line_2 = read.readline()
+                        cur = hufftree
+                        #if len(line_2) == 0:
+                            #decode.write(chr(cur.char_ascii) * cur.freq)
+                        for i in line_2:
+                            if i == "0":
+                                cur = cur.left
+                                if cur.left is None and cur.right is None:
+                                    decode.write(chr(cur.char_ascii))
+                                    cur = hufftree
+                            elif i == "1":
+                                cur = cur.right
+                                if cur.left is None and cur.right is None:
+                                    decode.write(chr(cur.char_ascii))
+                                    cur = hufftree
+    except:
+        raise FileNotFoundError
+
+
+def parse_header(header_string: str) -> List:
+    lst: List = [0] * 256
+    split_head = header_string.split()
+    for i in range(0, len(split_head), 2):
+        frq = int(split_head[i + 1])
+        lst[int(split_head[i])] = frq
+    return lst
