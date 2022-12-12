@@ -19,7 +19,11 @@ Lab 6 - Implement a Min Heap - 10/10
 
 Lab 7 - Basic Comparison Sorts (Selection and Insertion) and Quicksort - 10/10
 
-Lab 8 - Separate Chaining Hash Tables - na/10
+Lab 8 - Separate Chaining Hash Tables - 10/10
+
+Lab 9 - Topological Sorting - 10/10
+
+Lab 10 - Binary Search Trees Worksheet - 10/10
 
 
 Projects (25% of grade)
@@ -31,3 +35,7 @@ Project 2 - Evalutating expressions using stacks (postfix, prefix, infix) - 100/
 Project 3a - Huffman encoding - 95/100 - error for single unique character files
 
 Project 3b - Huffman decoding - 100/100
+
+Project 4 - Concordance table - 100/100
+
+Project 5 - Finding connected components and testing if graph is bipartite - 85/100
